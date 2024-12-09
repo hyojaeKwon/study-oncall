@@ -10,6 +10,6 @@ public class Application {
             onCallController.control();
         } catch (IllegalStateException e) {
             System.out.println("[ERROR] Internal Server Error");
-//        }
+        }
     }
 }
