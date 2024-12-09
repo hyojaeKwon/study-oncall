@@ -30,4 +30,29 @@ public class OnCallCycle {
         }
         return weekDayCycle.updateWorkCycle();
     }
+
+    public Person peekWeekDayWorker() {
+        return weekDayCycle.peekPerson();
+    }
+
+    public Person peekWeekEndWorker() {
+        return weekEndCycle.peekPerson();
+    }
+
+    public OnCallCycle updateWeekDayCycle() {
+        weekDayCycle.updateWorkCycle();
+        return new OnCallCycle(weekDayCycle, weekEndCycle);
+    }
+
+    public OnCallCycle updateWeekEndCycle() {
+        weekEndCycle.updateWorkCycle();
+        return new OnCallCycle(weekDayCycle, weekEndCycle);
+    }
+
+    public Person findNearestWorker(boolean isWeekEnd, String name) {
+        if (isWeekEnd) {
+            return weekEndCycle.findNearestPerson(name);
+        }
+        return weekDayCycle.findNearestPerson(name);
+    }
 }

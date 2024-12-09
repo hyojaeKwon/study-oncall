@@ -57,4 +57,8 @@ public class Cycle {
     public int size() {
         return workCycle.size();
     }
+
+    public Person findNearestPerson(String name) {
+        return workCycle.stream().filter(i -> !i.getName().equals(name)).findFirst().get();
+    }
 }

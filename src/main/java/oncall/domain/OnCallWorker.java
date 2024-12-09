@@ -40,4 +40,8 @@ public class OnCallWorker {
     public boolean isWeekEndCycle() {
         return day.isWeekEnd() || day.isSubstHoliday();
     }
+
+    public String getWorkerName() {
+        return worker.getName();
+    }
 }
