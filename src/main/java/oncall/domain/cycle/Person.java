@@ -21,4 +21,15 @@ public class Person {
     public String getName() {
         return name;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Person person = (Person) obj;
+        return person.getName().equals(name);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
