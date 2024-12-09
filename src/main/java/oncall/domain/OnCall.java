@@ -25,7 +25,7 @@ public class OnCall {
 
     private static List<OnCallWorker> generateWorkers(OnCallCycle onCallCycle, Month month) {
         List<OnCallWorker> workers = month.getDays().stream().map(OnCallWorker::create).toList();
-        List<OnCallWorker> workersCreated = new ArrayList<>(workers);
+        List<OnCallWorker> workersCreated = new ArrayList<>();
 
         for (OnCallWorker worker : workers) {
             onCallCycle = generateWorkersByCycle(onCallCycle, worker, workersCreated);
@@ -62,6 +62,14 @@ public class OnCall {
             }
         }
         return new OnCall(month, onCallWorkers, onCallCycle);
+    }
+
+    public List<OnCallWorker> getOnCallWorkers() {
+        return onCallWorkers;
+    }
+
+    public Month getMonth() {
+        return month;
     }
 
     private boolean checkWorkerContinuous(int today) {
