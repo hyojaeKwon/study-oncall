@@ -32,7 +32,10 @@ public class Month {
     }
 
     private static DayOfWeek calculateDayOfWeek(int dayNum, int startDate) {
-        int calculateDayOfWeek = ((dayNum + startDate) - 1) % 7 + 1;
+        int calculateDayOfWeek = ((dayNum + startDate) - 1) % 7;
+        if (calculateDayOfWeek == 0) {
+            calculateDayOfWeek = 7;
+        }
         return DayOfWeek.of(calculateDayOfWeek);
     }
 
