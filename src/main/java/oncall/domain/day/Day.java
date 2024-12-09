@@ -13,6 +13,10 @@ public class Day {
         this.isSubstHoliday = isSubstHoliday;
     }
 
+    public int getDayNumber() {
+        return dayNumber;
+    }
+
     public static Day create(int dayNumber, DayOfWeek dayOfWeek, boolean isSubstHoliday) {
         return new Day(dayNumber, dayOfWeek, isSubstHoliday);
     }
@@ -21,8 +25,8 @@ public class Day {
         return isSubstHoliday;
     }
 
-    public int getDayNumber() {
-        return dayNumber;
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
     }
 
     public boolean isWeekEnd() {

@@ -1,5 +1,7 @@
 package oncall.domain;
 
+import java.time.format.TextStyle;
+import java.util.Locale;
 import oncall.domain.cycle.Person;
 import oncall.domain.day.Day;
 
@@ -43,5 +45,9 @@ public class OnCallWorker {
 
     public String getWorkerName() {
         return worker.getName();
+    }
+
+    public String getDayName() {
+        return day.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.KOREAN);
     }
 }
